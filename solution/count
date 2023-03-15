@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+FILENAME="${1:-logfile}"
+
+cut -d' ' -f1 logfile | sort -n | uniq -c | sort -nr | sed 's/[ \t]*\([^ \t]*\) \([^ \t]*\)/\2 \1/' | head -n8
